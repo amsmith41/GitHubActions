@@ -2,7 +2,9 @@
 Automating Development with GitHub Actions
 
 1.) Automate the assignment of issues to a team member.
+
 2.) Run automated test cases for code merged into the main branch.
+
 3.) (Optional) Deploy a web application to Docker Hub.
 
 Task 1: Automate Issue Assignment:
