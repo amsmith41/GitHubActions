@@ -1,0 +1,14 @@
+name: Run Automated Test Cases
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "hello there, this is where test cases would be run against actual code, multiple runs would grant more branch converage"
