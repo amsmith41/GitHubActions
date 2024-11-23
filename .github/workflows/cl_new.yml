@@ -1,15 +1,12 @@
-name: Label New Issues as "To Do"
+name: 'Auto Assign'
 on:
-  issues:
-    types: [opened]
-permissions:
-  issues: write  # Explicitly grants write permission to manage issues
+  pull_request:
+    types: [opened, ready_for_review]
+
 jobs:
-  label_issue:
+  add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - name: Label new issue as "To Do"
-        uses: actions-ecosystem/action-add-labels@v1
+      - uses: kentaro-m/auto-assign-action@v2.0.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: "To Do"
+          configuration-path: '.github/some_name_for_configs.yml' # Only needed if you use something other than .github/auto_assign.yml
